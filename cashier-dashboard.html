@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashier Dashboard - UMS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <!-- --- Sidebar Navigation (Cashier) --- -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>UMS Cashier</h3>
+            </div>
+            <!-- Updated simplified sidebar -->
+            <nav class="sidebar-nav">
+                <a href="cashier-dashboard.html" class="nav-item active">Outstanding Bills</a>
+                <a href="generate-bill.html" class="nav-item">Generate Bill</a>
+                <a href="login.html" class="nav-item">Logout</a>
+            </nav>
+        </aside>
+
+        <!-- --- Main Content Area --- -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Welcome, Cashier</h1>
+                <div class="user-profile">
+                    <span>Billing Clerk</span>
+                </div>
+            </header>
+
+            <div class="content-area">
+                
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3>Outstanding Bills</h3>
+                    </div>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Bill ID</th>
+                                <th>Customer ID</th>
+                                <th>Customer Name</th>
+                                <th>Bill Date</th>
+                                <th>Due Date</th>
+                                <th>Amount Due (Rs.)</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        
+                        <!-- 
+                          *** FIX 1 & 2 ***
+                          I gave the <tbody> the correct ID and
+                          REMOVED all the hard-coded ("default") rows.
+                          Your JavaScript will now fill this table.
+                        -->
+                        <tbody id="cashier-outstanding-bills-body">
+                            <!-- This will be filled by cashier_app.js -->
+                            <tr>
+                                <td colspan="7">Loading outstanding bills...</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+
+    <!-- 
+      *** FIX 3 ***
+      Added this script tag to load your JavaScript file.
+    -->
+    <script src="cashier_app.js" defer></script>
+
+</body>
+</html>

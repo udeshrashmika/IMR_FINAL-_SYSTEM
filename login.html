@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMS Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- This is the left-side branding panel -->
+        <div class="login-branding">
+            <div class="branding-content">
+                
+                <!-- Text from your image -->
+                <h2>NSBM Green University Town</h2>
+                <h1>UMS SYSTEM</h1>
+                <p>Utility Management System</p>
+                
+            </div>
+        </div>
+        
+        <!-- This is the right-side form panel (No Change) -->
+        <div class="login-form-wrapper">
+            <form class="login-form">
+                <h2>Welcome</h2>
+                <p>Log in to your UMS account</p>
+                
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="role">Select Your Role</label>
+                    <select id="role" name="role" required>
+                        <option value="" disabled selected>Please select a role</option>
+                        <option value="Admin">Administrative Staff</option>
+                        <option value="FieldOfficer">Field Officer</option>
+                        <option value="Cashier / Billing Clerk">Cashier / Billing Clerk</option>
+                        <option value="Manager">Manager</option>
+                    </select>
+                </div>
+                
+                <div class="form-error-message" id="login-error"></div>
+                
+                <button type="submit" class="login-button">Login</button>
+            </form>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
+

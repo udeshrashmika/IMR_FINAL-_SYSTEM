@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Bill - UMS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>UMS Cashier</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="cashier-dashboard.html" class="nav-item">Outstanding Bills</a>
+                <a href="generate-bill.html" class="nav-item active">Generate Bill</a>
+                <a href="login.html" class="nav-item">Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Generate Customer Bill</h1>
+                <div class="user-profile">
+                    <span>Billing Clerk</span>
+                </div>
+            </header>
+
+            <div class="content-area">
+                
+                <div class="form-container">
+                    <h3>Generate Bill from a Meter Reading</h3>
+                    <p>Select an unbilled meter reading to generate a new bill.</p>
+                    
+                    <form class="data-form" id="generate-bill-form">
+                        
+                        <div class="form-message"></div>
+
+                        <div class="form-grid">
+                            
+                            <div class="input-group form-span-2">
+                                <label for="reading-id">Select Unbilled Meter Reading <span class="required-star">*</span></label>
+                                <select id="reading-id" name="reading-id" required>
+                                    <option value="" disabled selected>Loading readings...</option>
+                                    </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="customer-name">Customer</label>
+                                <input type="text" id="customer-name" name="customer-name" readonly class="readonly-input">
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="meter-id">Meter ID</label>
+                                <input type="text" id="meter-id" name="meter-id" readonly class="readonly-input">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="current-reading">Current Reading Value</label>
+                                <input type="text" id="current-reading" name="current-reading" readonly class="readonly-input">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="previous-reading">Previous Reading Value</label>
+                                <input type="text" id="previous-reading" name="previous-reading" readonly class="readonly-input">
+                            </div>
+
+                             <div class="input-group">
+                                <label for="consumption">Consumption</label>
+                                <input type="text" id="consumption" name="consumption" readonly class="readonly-input">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="amount-due">Amount Due (Calculated)</label>
+                                <input type="text" id="amount-due" name="amount-due" readonly class="readonly-input">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="bill-date">Bill Date <span class="required-star">*</span></label>
+                                <input type="date" id="bill-date" name="bill-date" required>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="due-date">Due Date <span class="required-star">*</span></label>
+                                <input type="date" id="due-date" name="due-date" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="submit-button">Generate Bill</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+    
+    <script src="cashier_app.js" defer></script>
+
+</body>
+</html>

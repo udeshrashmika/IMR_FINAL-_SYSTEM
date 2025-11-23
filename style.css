@@ -1,0 +1,727 @@
+/* --- Global Styles --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    height: 100%;
+    background-color: #f0f2f5;
+}
+
+/* --- Login Page Styles --- */
+.login-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 1. Left-Side Branding Panel (Updated) --- */
+.login-branding {
+    flex-basis: 50%;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.branding-content h1 { /* Was h2 before */
+    font-size: 48px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.branding-content h2 { /* New style for University */
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0;
+    opacity: 0.8;
+}
+
+.branding-content p {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0;
+}
+
+/* --- 2. Right-Side Form Panel --- */
+.login-form-wrapper {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    padding: 40px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Handle overflow if form is long */
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-form h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.login-form p {
+    margin-bottom: 30px;
+    color: #555;
+    font-size: 16px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* --- Style for both input and select --- */
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    -webkit-appearance: none; /* Removes default OS styling */
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff; /* Ensure bg is white */
+}
+
+/* --- Style for the select dropdown arrow --- */
+.input-group select {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 24px;
+}
+
+/* --- Add a nice focus effect --- */
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    outline: none;
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px; /* Add space above button */
+}
+
+.login-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.login-button:active {
+    transform: translateY(0);
+}
+
+/* --- Responsive for Mobile --- */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+    }
+    
+    .login-branding {
+        flex-basis: auto;
+        height: 250px; /* Give a fixed height on mobile */
+    }
+    
+    .login-form-wrapper {
+        flex-basis: auto;
+        padding: 20px;
+    }
+}
+
+/* ---
+   Dashboard Layout Styles
+   (Add to the end of style.css)
+   --- */
+
+/* --- Main Dashboard Container --- */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    background-color: #f4f7f6;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 260px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0; /* Prevents sidebar from shrinking */
+}
+
+.sidebar-header {
+    padding: 25px 20px;
+    text-align: center;
+    background-color: #34495e;
+    border-bottom: 1px solid #4a627a;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 22px;
+}
+
+.sidebar-nav {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+}
+
+.sidebar-nav .nav-item {
+    padding: 18px 25px;
+    color: #ecf0f1;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    transition: background-color 0.3s, padding-left 0.3s;
+}
+
+.sidebar-nav .nav-item:hover {
+    background-color: #34495e;
+    padding-left: 30px;
+}
+
+.sidebar-nav .nav-item.active {
+    background-color: #3498db;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* --- Main Content Area --- */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Allow content to scroll */
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 26px;
+    color: #2c3e50;
+}
+
+.user-profile span {
+    font-weight: 600;
+    color: #555;
+}
+
+.content-area {
+    padding: 30px;
+    flex-grow: 1;
+}
+
+/* ---
+   Form & Data Table Styles
+   --- */
+
+.form-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+}
+
+.form-container h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #2c3e50;
+}
+
+.form-container p {
+    margin-bottom: 30px;
+    color: #555;
+    font-size: 16px;
+}
+
+/* --- Form Grid Layout --- */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 equal columns */
+    gap: 20px 25px; /* Row and column gap */
+}
+
+/* --- Make an item span 2 columns --- */
+.form-span-2 {
+    grid-column: 1 / -1;
+}
+
+/* --- Re-use input-group styles from login --- */
+.form-container .input-group label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-container .input-group input,
+.form-container .input-group select {
+    font-size: 15px;
+    padding: 12px 15px;
+}
+
+/* --- Form Actions (Buttons) --- */
+.form-actions {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.submit-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+/* ---
+   Table Layout Styles
+   (Add to the end of style.css)
+   --- */
+
+.table-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.table-header h3 {
+    margin: 0;
+    font-size: 22px;
+    color: #2c3e50;
+}
+
+/* --- Style for the "Add New" button --- */
+.btn-add-new {
+    padding: 10px 20px;
+    background-color: #27ae60;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-add-new:hover {
+    background-color: #219a52;
+}
+
+/* --- Data Table Styling --- */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.data-table thead tr {
+    background-color: #f4f7f6;
+    border-bottom: 2px solid #ddd;
+}
+
+.data-table th {
+    padding: 15px 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid #eef1f3;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+.data-table td {
+    padding: 15px 12px;
+    color: #555;
+    vertical-align: middle;
+}
+
+/* --- Action Buttons in Table --- */
+.btn-action {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.btn-edit {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #2980b9;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+
+/* ---
+   Dashboard Widget Styles
+   (Add to the end of style.css)
+   --- */
+
+.widget-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.widget {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #3498db; /* Accent color */
+}
+
+.widget h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #555;
+    font-weight: 600;
+}
+
+.widget .widget-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+}
+
+.widget .widget-desc {
+    font-size: 14px;
+    color: #777;
+}
+
+/* --- You can add other accent colors --- */
+.widget:nth-child(2) {
+    border-left-color: #2ecc71; /* Green */
+}
+.widget:nth-child(3) {
+    border-left-color: #e67e22; /* Orange */
+}
+.widget:nth-child(4) {
+    border-left-color: #9b59b6; /* Purple */
+}
+
+/* ---
+   Chart Container Styles
+   (Add to the end of style.css)
+   --- */
+
+.chart-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.chart-container h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 22px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.chart-container img {
+    max-width: 100%; /* Make the chart image responsive */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+
+/* ---
+   Chart Container Styles
+   (Add to the end of style.css)
+   --- */
+
+.chart-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.chart-container h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 22px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.chart-container img {
+    max-width: 100%; /* Make the chart image responsive */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+
+.chart-container h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 22px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.chart-container img {
+    max-width: 100%; /* Make the chart image responsive */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.status-paid {
+    background-color: #27ae60;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status-unpaid {
+    background-color: #e74c3c;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+
+
+/* ---
+   ADDITIONAL POLISHING STYLES
+   (Add to the end of style.css)
+   --- */
+
+/* --- 1. Enhanced Sidebar Links --- */
+/* Add a small icon placeholder */
+.sidebar-nav .nav-item::before {
+    content: '▶'; /* Simple placeholder */
+    font-size: 10px;
+    margin-right: 12px;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav .nav-item.active::before,
+.sidebar-nav .nav-item:hover::before {
+    opacity: 1;
+    color: #fff;
+}
+
+/* Smoother hover transition */
+.sidebar-nav .nav-item {
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.sidebar-nav .nav-item:hover {
+    background-color: #34495e;
+    padding-left: 30px; /* Indent on hover */
+}
+
+/* --- 2. Improved Form Input Focus --- */
+/* Give a more prominent focus ring to inputs/selects */
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px 0 rgba(52, 152, 219, 0.4);
+    outline: none;
+}
+
+/* --- 3. Better Table Row Hover --- */
+/* Make the entire row highlight */
+.data-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f6fafd; /* A light blue tint */
+    cursor: default;
+}
+
+/* --- 4. Enhanced Widget Hover --- */
+.widget {
+    transition: all 0.3s ease;
+    border-left-width: 5px;
+}
+
+.widget:hover {
+    transform: translateY(-5px); /* Lift the widget up */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* --- 5. Button Press Effect --- */
+/* Add a "pop" effect when a button is clicked */
+.submit-button:active,
+.btn-action:active,
+.login-button:active {
+    transform: translateY(1px);
+    filter: brightness(0.95);
+}
+
+/* --- 6. Main Header Polish --- */
+.main-header {
+    /* Add a subtle shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* --- 7. Custom Scrollbar (Webkit) --- */
+/* Add a sleeker scrollbar to the content area */
+.main-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.main-content::-webkit-scrollbar-track {
+    background: #f4f7f6;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+    background: #cdd2d6;
+    border-radius: 4px;
+}
+
+.main-content::-webkit-scrollbar-thumb:hover {
+    background: #b4bcc2;
+}
+
+.input-group input:read-only {
+    background-color: #f4f7f6; /* Light gray background */
+    color: #777;             /* Muted text color */
+    cursor: not-allowed;    /* Show a 'disabled' cursor */
+    border-color: #ddd;     /* Ensure border is muted */
+}
+
+/* Make form-actions space buttons apart */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

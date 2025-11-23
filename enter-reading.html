@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Enter Reading</title>
+    <!-- We ONLY link to the new mobile CSS -->
+    <link rel="stylesheet" href="mobile-field.css">
+</head>
+<body>
+    <div class="mobile-wrapper">
+        
+        <!-- Header with Back Button -->
+        <header class="mobile-header">
+            <a href="view-routes.html" class="back-button">&larr;</a>
+            <h1>Enter Meter Reading</h1>
+        </header>
+
+        <!-- Main content with form -->
+        <main class="mobile-content">
+            <form class="mobile-form" id="reading-form">
+                
+                <!-- Read-only info about the job -->
+                <div class="customer-info">
+                    <p>Customer: <span id="customer-name">Loading...</span></p>
+                    <p>Address: <span id="customer-address">Loading...</span></p>
+                    <p>Meter ID: <span id="customer-meter-id">Loading...</span></p>
+                </div>
+                
+                <input type="hidden" id="meter-id-hidden" name="meter-id">
+                
+                <div class="input-group">
+                    <label for="reading-value">Current Meter Reading</label>
+                    <input type="number" id="reading-value" name="reading-value" 
+                           placeholder="e.g., 14502" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="reading-date">Reading Date</label>
+                    <input type="date" id="reading-date" name="reading-date" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="notes">Notes (Optional)</label>
+                    <textarea id="notes" name="notes" 
+                              placeholder="e.g., Meter box is damaged..."></textarea>
+                </div>
+                
+                <div class="sticky-footer-button">
+                    <button type="submit" class="submit-button">Submit Reading</button>
+                </div>
+            </form>
+        </main>
+
+        </div>
+    
+    <script src="field_app.js" defer></script>
+</body>
+</html>

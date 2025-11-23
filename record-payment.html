@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Payment - UMS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <!-- --- Sidebar Navigation (Cashier) --- -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>UMS Cashier</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="cashier-dashboard.html" class="nav-item active">Outstanding Bills</a>
+                <a href="generate-bill.html" class="nav-item">Generate Bill</a>
+                <a href="login.html" class="nav-item">Logout</a>
+            </nav>
+        </aside>
+
+        <!-- --- Main Content Area --- -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Record Customer Payment</h1>
+                <div class="user-profile">
+                    <span>Billing Clerk</span>
+                </div>
+            </header>
+
+            <div class="content-area">
+                
+                <div class="form-container">
+                    <h3>Process New Payment</h3>
+                    <p>Confirm the payment details for the selected bill.</p>
+                    
+                    <!-- 
+                      *** FIX 1: Added id="record-payment-form" ***
+                    -->
+                    <form class="data-form" id="record-payment-form">
+                        
+                        <!-- 
+                          *** FIX 2: Added form-message div ***
+                        -->
+                        <div class="form-message"></div>
+
+                        <div class="form-grid">
+                            
+                            <div class="input-group">
+                                <label for="bill-id">Bill ID</label>
+                                <!-- 
+                                  *** FIX 3: Removed all hard-coded 'value' attributes ***
+                                  The JS will fill this now.
+                                -->
+                                <input type="text" id="bill-id" name="bill-id" 
+                                       readonly class="readonly-input">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="customer-name">Customer Name</label>
+                                <input type="text" id="customer-name" name="customer-name" 
+                                       readonly class="readonly-input">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="amount-due">Amount Due (Rs.)</label>
+                                <input type="text" id="amount-due" name="amount-due" 
+                                       readonly class="readonly-input">
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="payment-amount">Payment Amount (Rs.) <span class="required-star">*</span></label>
+                                <input type="number" id="payment-amount" name="payment-amount" 
+                                       required step="0.01">
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="payment-method">Payment Method <span class="required-star">*</span></label>
+                                <!-- 
+                                  *** FIX 4: Corrected values to match SQL ***
+                                -->
+                                <select id="payment-method" name="payment-method" required>
+                                    <option value="Cash">Cash</option>
+                                    <option value="Card">Card</option>
+                                    <option value="Online">Online</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="payment-date">Payment Date <span class="required-star">*</span></label>
+                                <input type="date" id="payment-date" name="payment-date" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="submit-button">Confirm Payment</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+
+    <!-- 
+      *** FIX 5: Added the script tag ***
+    -->
+    <script src="cashier_app.js" defer></script>
+
+</body>
+</html>
